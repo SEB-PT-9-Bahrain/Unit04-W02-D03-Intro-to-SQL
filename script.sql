@@ -50,4 +50,20 @@ CREATE TABLE songs(
 	band_id INTEGER REFERENCES bands(id)
 );
 
+SELECT * FROM bands;
+SELECT * FROM songs;
+
+
+INSERT INTO songs(name, length,band_id)
+VALUES('my song',200,3);
+
+
+SELECT 
+	bands.id AS band_id,
+	songs.id AS song_id,
+	songs.length AS song_length,
+	bands.genre
+FROM songs
+JOIN bands ON bands.id = songs.band_id;
+
 
